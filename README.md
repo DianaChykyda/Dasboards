@@ -22,35 +22,51 @@ Using the INDEX and MATCH formulas to join product data with order data.
 =XLOOKUP(orders!C3,customers!$A:$A,customers!$B:$B,,0)
 
 Description: Looks up the value in cell C3 of the "orders" table in column A of the "customers" table and returns the corresponding value from column B.
+
 Purpose: Retrieves the customer's name based on the customer ID.
+
 =IF(XLOOKUP(orders!C2,customers!$A:$A,customers!$C:$C,,0)=0,"",XLOOKUP(orders!C2,customers!$A:$A,customers!$C:$C,,0))
 
 Description: Uses XLOOKUP to find the value in column C of the "customers" table based on C2 in the "orders" table. If the found value is 0, it returns an empty string; otherwise, it returns the found value.
+
 Purpose: Retrieves the customer's email or leaves it blank if the email is missing.
+
 =XLOOKUP(orders!C2,customers!$A:$A,customers!$G:$G,,0)
 
 Description: Looks up the value in cell C2 of the "orders" table in column A of the "customers" table and returns the corresponding value from column G.
+
 Purpose: Retrieves the customer's country based on the customer ID.
+
 =INDEX(products!$A$1:$G$49,MATCH(orders!$D2,products!$A:$A,0),MATCH(orders!I$1,products!$A$1:$G$1,0))
 
 Description: Uses INDEX and MATCH to find the value in the "products" table based on the product ID in column D of the "orders" table. It returns the value from the corresponding column.
+
 Purpose: Retrieves product information (e.g., coffee type) based on the product ID.
+
 =INDEX(products!$A$1:$G$49,MATCH(orders!$D2,products!$A:$A,0),MATCH(orders!J$1,products!$A$1:$G$1,0))
 
 Description: Similar to the previous formula, but retrieves a different product characteristic.
+
 Purpose: Retrieves another product characteristic (e.g., roast type) based on the product ID.
+
 =INDEX(products!$A$1:$G$49,MATCH(orders!$D2,products!$A:$A,0),MATCH(orders!K$1,products!$A$1:$G$1,0))
 
 Description: Similar to the previous formulas, retrieves another product characteristic.
+
 Purpose: Retrieves the package size based on the product ID.
+
 =INDEX(products!$A$1:$G$49,MATCH(orders!$D2,products!$A:$A,0),MATCH(orders!L$1,products!$A$1:$G$1,0))
 
 Description: Similar to the previous formulas, retrieves another product characteristic.
+
 Purpose: Retrieves the unit price based on the product ID.
+
 =IF(I2="Rob","Robusta",IF(I2="Exc","Excelsa", IF(I2="Ara","Arabica", IF(I2="Lib","Liberica",""))))
 
 Description: Checks the value in cell I2 and returns the corresponding full coffee type name (Robusta, Excelsa, Arabica, Liberica) based on the abbreviation.
+
 Purpose: Converts the coffee type abbreviation to the full name.
+
 =IF(J2="M","Medium", IF(J2="L","Light", IF(J2="D","Dark","")))
 
 Description: Checks the value in cell J2 and returns the corresponding roast type (Medium, Light, Dark) based on the abbreviation.
