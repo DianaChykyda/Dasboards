@@ -19,6 +19,7 @@ LIMIT 5;
 
 
 -------Запит: Знайти 100 найбільш потенціно небезпечних об'єктів : чим більше це відношення, тим швидше об'єкт пройде повз Землю на малій відстані.
+SELECT name AS object_name
 	,neo_id AS id
 	,ROUND(relative_velocity / miss_distance,5) AS potential_danger
 FROM objects
